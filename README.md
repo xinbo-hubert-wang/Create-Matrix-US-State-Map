@@ -329,19 +329,6 @@ us_map.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -412,10 +399,6 @@ for row in us_map.iterrows():
     plt.annotate(text, row[1]['center'], horizontalalignment='center', verticalalignment='center', size=size)
 ```
 
-    <ipython-input-7-06b8f72af8ba>:7: UserWarning: Geometry is in a geographic CRS. Results from 'centroid' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
-    
-      us_map['center'] = us_map['geometry'].centroid.apply(lambda c: (c.x, c.y))
-
 
 
     
@@ -443,20 +426,6 @@ for row in us_map.iterrows():
         size = 8
     plt.annotate(text, row[1]['center'], horizontalalignment='center', verticalalignment='center', size=size)
 ```
-
-    <ipython-input-8-f1e368862819>:2: UserWarning: Geometry is in a geographic CRS. Results from 'centroid' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
-    
-      us_map['geometry'] = us_map['geometry'].centroid.buffer(0.5)
-    <ipython-input-8-f1e368862819>:2: UserWarning: Geometry is in a geographic CRS. Results from 'buffer' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
-    
-      us_map['geometry'] = us_map['geometry'].centroid.buffer(0.5)
-    <ipython-input-8-f1e368862819>:3: UserWarning: Geometry is in a geographic CRS. Results from 'buffer' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
-    
-      us_map.loc[us_map['type']=='overall', 'geometry'] = us_map['geometry'].buffer(0.5)
-    <ipython-input-8-f1e368862819>:10: UserWarning: Geometry is in a geographic CRS. Results from 'centroid' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
-    
-      us_map['center'] = us_map['geometry'].centroid.apply(lambda c: (c.x, c.y))
-
 
 
     
